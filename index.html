@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purple Dreams</title>
+  <link rel="icon" href="https://www.citypng.com/public/uploads/preview/hd-pink-hand-sketch-heart-love-png-735811697025575st8junchot.png" type="image/x-icon">
+  <link rel="stylesheet" href="/static/css/styles3.css">
+</head>
+<body>
+  <div class="rain"></div>
+  <div class="container">
+
+    <h1 class="animated-text">Hey... 🫢<br><br>There’s something I’ve been holding in for a while.</h1>
+    <p class="animated-text">And today... I’m ready to share it.</p>
+    <button class="next-button" id="revealButton">Reveal Message</button>
+
+    <div class="hidden-message" id="hiddenMessage">
+      <p style="color: white;">
+        I’ve never said this name to you before… not in chats, not in person.<br>
+        But in my heart, I’ve always whispered it softly...<br><br>
+        <b style="color: #c9ada7; font-size: 18px;">Nishu</b> — this is for you.<br>
+        Every word, every color, every drop of rain... is from my heart to yours. 💜
+      </p>
+      
+        <button class="next-button" onclick="next()">Click Here</button>
+      
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('revealButton').addEventListener('click', function () {
+      const hiddenMessage = document.getElementById('hiddenMessage');
+      hiddenMessage.style.display = 'block';
+      hiddenMessage.style.animation = 'fadeIn 1s forwards';
+    });
+
+    function createRain() {
+      const rainContainer = document.querySelector('.rain');
+      for (let i = 0; i < 100; i++) {
+        const drop = document.createElement('div');
+        drop.className = 'drop';
+        drop.style.left = Math.random() * 100 + 'vw';
+        drop.style.animationDuration = Math.random() * 1 + 0.5 + 's';
+        drop.style.opacity = Math.random();
+        rainContainer.appendChild(drop);
+      }
+    }
+    function next(){
+      window.location.href = "Pages/1.html";
+    }
+
+    createRain();
+    setInterval(createRain,210 ); // Create new raindrops every second
+  </script>
+</body>
+</html>
